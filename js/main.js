@@ -4,14 +4,17 @@
  * WHERE YOU PUT YOUR ADVANCED CODE
  *
  */
-
 $(document).ready(function(){
 
-		
+
 		var $sphere = $('#sphere2');
 		var $sphereText = $('#sphere-text');
+		var $iphoneSphere = $('#iphone-sphere');
+		var $iphoneSphereText = $('#iphone-sphere-text');
 		center_element($sphere);
 		center_element($sphereText);
+		center_element_iphone($iphoneSphere);
+		center_element_iphone($iphoneSphereText);
 
 		var percent = 0;
 		var margins = get_basic_margins();
@@ -20,16 +23,22 @@ $(document).ready(function(){
 		
 		calc_positions(percent);
 
-		$(window).scroll(function(e) {
-			//console.log("Doc Height = "+$(document).height()+", scroll="+$(document).scrollTop());
-			percent = $(document.body).scrollTop() * 100 / ($(document.body)[0].scrollHeight - window.innerHeight);
-			//percent = 100*$(document).scrollTop() / $(document).height();
-			if(percent > 99.7) {
-				$(document.body).scrollTop(0);
-				percent=0;
-			}
-			check_percents_text(percent);
-			calc_positions(percent);
+		$(window).load(function(){
+
+			$(window).scroll(function(e) {
+				//console.log("Doc Height = "+$(document).height()+", scroll="+$(document).scrollTop());
+				percent = $(document.body).scrollTop() * 100 / ($(document.body)[0].scrollHeight - window.innerHeight);
+				//percent = 100*$(document).scrollTop() / $(document).height();
+				if(percent > 99.7) {
+					$(document.body).scrollTop(0);
+					percent=0;
+				}
+				check_percents_text(percent);
+				calc_positions(percent);
+				iphone_do_stuff();
+				
+			});
+
 		});
 
 
@@ -42,8 +51,31 @@ $(document).ready(function(){
 		});
 });
 
+var lastImgIndex = -1;
+function iphone_do_stuff() {
+	
+	var docTop = $(document.body).scrollTop();
 
+	var images = $('#iphone-container img');
+	for (var i = 0; i < images.length; i++) {
+		var imageHeight = $(images[i]).height();
+		var imgTop = $(images[i]).position().top;
 
+		if(docTop <= imgTop + imageHeight && docTop >= imgTop && lastImgIndex!=i) {
+			console.log("SHOWING IMAGE number "+i);
+			var $img = $(images[i]);
+			var day = $img.attr("data-day");
+			var month = $img.attr("data-month");
+			var year = $img.attr("data-year");
+			$('#iphone-day').html(day);
+			$('#iphone-month').html(month);
+			$('#iphone-year').html(year);
+			lastImgIndex = i;
+		}
+	};
+
+	
+}
 
 function check_percents_text(p) {
 	if(p > 3 && p < 4) {
@@ -68,10 +100,15 @@ function show_sphere_text(day, month, year) {
 
 function center_element(element) {
 
-		console.log("Element width = "+element.width());
 		var elementLeft =  (window.innerWidth/2 - element.outerWidth()/2);
 		var elementTop = (window.innerHeight/2 - element.outerHeight()/2);
 		element.css({left: elementLeft, top: elementTop});
+}
+
+function center_element_iphone(element) {
+
+		var elementLeft =  (window.innerWidth/2 - element.outerWidth()/2);
+		element.css({left: elementLeft});
 }
 
 function get_basic_margins() {

@@ -46,10 +46,21 @@ body {
 }
 
 #sphere-text {
-
 	position:fixed;
 	margin: 0;
-
+	text-align:center;
+	vertical-align:middle;
+	display:none;
+	width:260px;
+}
+ #iphone-sphere-text{
+	position:fixed;
+	margin: 0;
+	text-align:center;
+	vertical-align:middle;
+	width:100px;
+	height:100px;
+	z-index: 2;
 }
 
 #menubar {
@@ -66,28 +77,27 @@ body {
 	margin: 0px 10px 0px 10px
 }	
 
-.balledate {
+#iphone-sphere {
 	position: fixed;
-	margin: auto;
+	margin: 0;
 	width: 100px;
 	height: 100px;
 	border-radius: 50px;
 	border:3px solid;
 	border-color: black;
 	background-color: white;
+	z-index: 1;
 }
 
 
 .marge {
-		padding: 0px 10px 10px 10px;
-		width: 1000px;
-		display: block;
+	padding: 0px 10px 10px 10px;
+	display: block;
 
 }
 
 .sansmarge {
 	padding: 0px 10px 0px 10px;
-	width: 1000px;
 	display: block;
 }
 /*
