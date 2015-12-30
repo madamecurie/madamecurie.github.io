@@ -7,7 +7,7 @@
 
 body {
 
-	background: url('../imgs/fond.gif') no-repeat center;
+	background: url('../imgs/fond.gif');
 	background-size: cover;
 	background-attachment: fixed;
 	

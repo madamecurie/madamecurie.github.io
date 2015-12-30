@@ -10,8 +10,6 @@ $(document).ready(function(){
 		
 		var $sphere = $('#sphere2');
 		var $sphereText = $('#sphere-text');
-
-		console.log("Sphere width = "+$sphere.width()+", inner = "+$sphere.innerWidth());
 		center_element($sphere);
 		center_element($sphereText);
 
@@ -21,10 +19,6 @@ $(document).ready(function(){
 		$('#big-pic').css("margin-top", margins.marginTop);
 		
 		calc_positions(percent);
-
-		var body_height = $("#big-pic").height() - $(window).height();
-
-		var originalHeight = $(document).height();
 
 		$(window).scroll(function(e) {
 			//console.log("Doc Height = "+$(document).height()+", scroll="+$(document).scrollTop());
@@ -38,8 +32,17 @@ $(document).ready(function(){
 			calc_positions(percent);
 		});
 
-		//play_tour();
+
+		$(window).on("resize", function(e){
+			var $sphere = $('#sphere2');
+			var $sphereText = $('#sphere-text');
+			center_element($sphere);
+			center_element($sphereText);
+			calc_positions(percent);
+		});
 });
+
+
 
 
 function check_percents_text(p) {
