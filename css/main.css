@@ -1,0 +1,118 @@
+/*
+ * main.css
+ * —
+ * WHERE YOU PUT YOUR CODE
+ *
+ */
+
+body {
+
+	background: url('../imgs/fond.gif') no-repeat center;
+	background-size: cover;
+	background-attachment: fixed;
+	
+	min-height:6000px;
+	height:6000px;
+}
+
+#svgs {
+	/*position: relative;
+	width: 100%;
+	height: 100%;*/
+	display:none;
+}
+
+#sphere {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	border-radius: 30px;
+	background-color: black;
+}
+
+#sphere2 {
+	position: fixed;
+	margin:0;
+	width: 260px;
+	height: 260px;
+	border: 7px solid black;
+	border-radius: 50%;
+	background-color: white;
+}
+
+#date-month {
+
+	
+}
+
+#sphere-text {
+
+	position:fixed;
+	margin: 0;
+
+}
+
+#menubar {
+	position: fixed;
+
+	background-color: black;
+	height: 20px;
+}
+
+#date{
+	color: white;
+	text-align: center;
+	background-color: black;
+	margin: 0px 10px 0px 10px
+}	
+
+.balledate {
+	position: fixed;
+	margin: auto;
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+	border:3px solid;
+	border-color: black;
+	background-color: white;
+}
+
+
+.marge {
+		padding: 0px 10px 10px 10px;
+		width: 1000px;
+		display: block;
+
+}
+
+.sansmarge {
+	padding: 0px 10px 0px 10px;
+	width: 1000px;
+	display: block;
+}
+/*
+ * media queries
+ * —
+ * WHERE YOU CHANGE YOUR LAYOUT
+ *
+ */
+
+@media (max-width: 480px) {
+
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+}
+
+@media (orientation: landscape) {
+
+}
+
+@media (orientation: portrait) {
+
+}
