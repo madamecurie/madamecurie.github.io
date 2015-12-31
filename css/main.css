@@ -8,9 +8,9 @@
 body {
 
 	background: url('../imgs/fond.gif');
-	background-size: cover;
+	background-size: repeat;
 	background-attachment: fixed;
-	
+
 	min-height:6000px;
 	height:6000px;
 }
@@ -96,10 +96,11 @@ body {
 
 }
 
-.sansmarge {
+.sansmargebas {
 	padding: 0px 10px 0px 10px;
 	display: block;
 }
+
 /*
  * media queries
  * —
