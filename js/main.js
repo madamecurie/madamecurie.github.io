@@ -78,13 +78,13 @@ function iphone_do_stuff() {
 }
 
 function check_percents_text(p) {
-	if(p > 3 && p < 4) {
-		show_sphere_text(12, "June", 1930);
+	if(p > 2 && p < 5.5) {
+		show_sphere_text("December", "23th", 1928);
 	} else if(p > 10 && p < 14) {
 		show_sphere_text(11, "February", 1920);
 	}
 	else {
-		$('#sphere-text').fadeOut(500);
+		$('#sphere-text').fadeOut(300);
 	}
 
 }
@@ -94,7 +94,7 @@ function show_sphere_text(day, month, year) {
 	$('#date-month').html(month);
 	$('#date-year').html(year);
 	center_element($("#sphere-text"));
-	$('#sphere-text').fadeIn(500);
+	$('#sphere-text').fadeIn(300);
 }
 
 
