@@ -44,11 +44,13 @@ $(document).ready(function(){
 		center_element($sphereText);
 		center_element_iphone($iphoneSphere);
 		center_element_tablet($tabletSphere);
-		// center_element_iphone($iphoneSphereText);
+		//center_element_iphone($iphoneSphereText);
 
 		var percent = 0;
 		var $bigpic = isDesktop() ? $('#big-pic') : $('#big-pic-tablet');
 		var margins = isDesktop() ? get_basic_margins() : get_basic_margins_tablet();
+		c("margins: ");
+		c(margins);
 		$bigpic.css("margin-left", margins.marginLeft);
 		$bigpic.css("margin-top", margins.marginTop);
 		
@@ -68,7 +70,9 @@ $(document).ready(function(){
 					}
 				}
 				check_percents_text(percent);
+				check_percents_image(percent);
 				calc_positions(percent);
+
 				if(isMobile()) {
 					iphone_do_stuff();
 				}
@@ -125,8 +129,6 @@ function check_percents_text(p) {
 		show_sphere_text("April", "20th", 1906);
 	} else if(p > 27.6 && p < 28.1) {
 		show_sphere_text("April", "22th", 1906);
-
-
 	}
 	else {
 		$('#sphere-text').fadeOut(300);
@@ -142,6 +144,19 @@ function show_sphere_text(day, month, year) {
 	$('#sphere-text').fadeIn(300);
 }
 
+function check_percents_image(p) {
+	if(p > 0.4 && p < 1.6) {
+		show_image(0);
+	}
+	else {
+		$("#image-container img").fadeOut(300);
+	}
+}
+
+function show_image(index) {
+	var image = $("#image-container").children()[index];
+	$(image).fadeIn(300);
+}
 
 function center_element(element) {
 
@@ -160,27 +175,25 @@ function center_element_tablet(element) {
 
 function center_element_iphone(element) {
 		var elementLeft =  (window.innerWidth/2 - element.outerWidth()/2);
+		console.log("Centering iph = "+elementLeft);
 		element.css({left: elementLeft});
-
 }
 
 function get_basic_margins() {
 	return {
-		marginLeft: -($('#big-pic').innerWidth() - $(document).innerWidth())/2,
+		marginLeft: -($('#big-pic').innerWidth() - $(document).innerWidth()) /2,
 		marginTop: window.innerHeight/2
 	}
 }
 
 function get_basic_margins_tablet() {
 	return {
-		marginLeft: -$('#big-pic-tablet').innerWidth() + $(document).innerWidth()/4,
+		marginLeft: -$('#big-pic-tablet').innerWidth()/2 + $(document).innerWidth()*3/4,
 		marginTop: window.innerHeight/2
 	}
 }
 
 function calc_positions(percent_down_the_line){
-	
-
 
 	var $svg = $('#path_1');
 	var $path = $svg.find('path');

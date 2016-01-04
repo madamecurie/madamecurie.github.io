@@ -125,6 +125,18 @@ body {
 	display: block;
 }
 
+#image-container {
+	position:fixed;
+}
+
+#image-container img {
+	float:right;
+	display:none;
+}
+
+#scroll-tablet-container img {
+}
+
 /*
  * media queries
  * —
