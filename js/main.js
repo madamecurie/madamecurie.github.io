@@ -78,10 +78,18 @@ function iphone_do_stuff() {
 }
 
 function check_percents_text(p) {
-	if(p > 2 && p < 5.5) {
-		show_sphere_text("December", "23th", 1928);
-	} else if(p > 10 && p < 14) {
-		show_sphere_text(11, "February", 1920);
+	if(p > 6.4 && p < 7.5) {
+		show_sphere_text("June", "8th", 1903);
+	} else if(p > 11.86 && p < 13) {
+		show_sphere_text("December", "11th", 1903);
+	} else if(p > 16 && p < 17) {
+		show_sphere_text("July", "4th", 1905);
+	} else if(p > 25.9 && p < 27.5) {
+		show_sphere_text("April", "20th", 1906);
+	} else if(p > 27.6 && p < 28.1) {
+		show_sphere_text("April", "22th", 1906);
+
+
 	}
 	else {
 		$('#sphere-text').fadeOut(300);
