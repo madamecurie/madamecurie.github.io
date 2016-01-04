@@ -40,6 +40,26 @@ body {
 	background-color: white;
 }
 
+#sphere-tablet {
+	position: fixed;
+	margin:0;
+	width: 260px;
+	height: 260px;
+	border: 7px solid black;
+	border-radius: 50%;
+	background-color: white;
+	display:none;
+}
+
+#sphere-text-tablet {
+	position:fixed;
+	margin: 0;
+	text-align:center;
+	vertical-align:middle;
+	display:none;
+	width:260px;
+}
+
 #date-month {
 
 	
@@ -54,12 +74,16 @@ body {
 	width:260px;
 }
  #iphone-sphere-text{
-	position:fixed;
+	position:absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 	margin: 0;
 	text-align:center;
 	vertical-align:middle;
-	width:100px;
-	height:100px;
+	/*width:100px;*/
+	/*height:100px;*/
 	z-index: 2;
 }
 
@@ -112,7 +136,7 @@ body {
 
 }
 
-@media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: 481px) and (max-width: 768px){
 
 }
 

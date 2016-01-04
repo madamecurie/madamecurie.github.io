@@ -34,20 +34,27 @@
 				<img src="imgs/path2.png" width="100%" height="100%">
 			</div>
 		</div>
+
+		<div class="mobile-hidden desktop-hidden" style="overflow:hidden; height:8000px; position:fixed;">
+			<div id="big-pic-tablet" style="max-width:none; width:2000px; height:2000px; overflow:hidden;">
+				<img src="imgs/path3.png" width="100%" height="100%">
+			</div>
+		</div>
 		
 		<div class="row mobile-hidden tablet-hidden" style="overflow:hidden;">
 
 			<div id="sphere2">
 				
 			</div>
-			<span id="sphere-text">
+			<span id="sphere-text" class="">
 
 				<h1 id="date-month">January</h1>
 				<h1 id="date-day">2</h1>
 				<h1 id="date-year">1934</h1>
-				
 
 			</span>
+
+			
 
 			<div id="svgs">
 				<!-- <svg id="path_1" x="0px" y="0px" viewBox="0 0 259.1 829.5" preserveAspectRatio="none" fill="transparent" stroke="#000000">
@@ -78,18 +85,26 @@
 		</div>
 
 
-		<div id="iphone-sphere" class="desktop-hidden tablet-hidden"> </div>
-			<div id="iphone-sphere-text" class="desktop-hidden tablet-hidden">
+		<div id="iphone-sphere" class="desktop-hidden tablet-hidden">
+			<div id="iphone-t" class="desktop-hidden tablet-hidden">
+
 				<h3 id="iphone-day"></h3>
 				<h3 id="iphone-month"></h3>
 				<h3 id="iphone-year"></h3>
 			</div>
-
+		</div>
 
 		<div class="grid">
 			<div class="row mobile-hidden desktop-hidden">
+				<div id="sphere-tablet">
+				</div>
+				<span id="sphere-text-tablet">
+					<h1 id="date-month">January</h1>
+					<h1 id="date-day">2</h1>
+					<h1 id="date-year">1934</h1>
+				</span>
 
-				<div class="column three">
+				<div class="column six" id="scroll-tablet-container">
 					<img src="imgs/vie_publique/txt/1906-04-20.jpg">
 					<img src="imgs/vie_publique/img/vp-img-14.jpg">
 					<img src="imgs/vie_publique/txt/1906-04-22.jpg">
@@ -98,9 +113,6 @@
 					<img src="imgs/vie_publique/txt/1911-11-28_1.jpg">
 					<img src="imgs/vie_publique/img/vp-img-2.jpg">
 					<img src="imgs/vie_publique/txt/1911-11-28_2.jpg">
-				</div>
-
-				<div class="column three">
 					<img src="imgs/vie_publique/txt/1911-11-28_3.jpg">					
 					<img src="imgs/vie_publique/txt/1912-01-03.jpg">
 					<img src="imgs/vie_publique/img/vp-img-7.jpg">
@@ -114,9 +126,6 @@
 					<img src="imgs/vie_publique/txt/1921-03-03.jpg">
 					<img src="imgs/vie_publique/txt/1921-03-10.jpg">
 					<img src="imgs/vie_publique/txt/1921-03-13.jpg">
-				</div>
-
-				<div class="column three">
 					<img src="imgs/vie_publique/txt/1921-03-13_2.jpg">
 					<img src="imgs/vie_publique/img/vp-img-15.jpg">
 					<img src="imgs/vie_publique/txt/1921-03-14.jpg">
@@ -135,9 +144,6 @@
                     <img src="imgs/vie_publique/img/vp-img-3.jpg">
                     <img src="imgs/vie_publique/txt/1921-06-25.jpg">
                     <img src="imgs/vie_publique/txt/1921-07-03.jpg">
-                </div>
-
-				<div class="column three">
                     <img src="imgs/vie_publique/txt/1932-04-03.jpg">
                     <img src="imgs/vie_publique/txt/1934-06-05.jpg">
                     <img src="imgs/vie_publique/txt/1934-07-05_1.jpg">
@@ -153,11 +159,8 @@
 
 
 
-			<div class="tablet-landscape-hidden tablet-portrait-hidden desktop-hidden">
+			<div class="tablet-hidden desktop-hidden">
 			
-
-
-
 				<div id="iphone-container" class="column full dest" style="margin-bottom:0!important;">
 					<img class="marge" src="imgs/vie_scientifique/txt/1903-06-08.jpg" data-day="8th" data-month="June" data-year="1903">
 					<img class="sansmargebas" src="imgs/vie_scientifique/img/vs-img-3.jpg" data-day="10th" data-month="December" data-year="1903">
