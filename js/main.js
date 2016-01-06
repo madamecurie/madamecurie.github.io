@@ -12,6 +12,7 @@
   return check;
 }
 
+
 function c(word) {
 	console.log(word);
 }
