@@ -87,6 +87,20 @@ body {
 	z-index: 2;
 }
 
+#sphere-text-tablet{
+	position:absolute;
+	top: 50%;
+	left: 75%;
+	-webkit-transform: translate(-75%, -50%);
+	transform: translate(-75%, -50%);
+	margin: 0;
+	text-align:center;
+	vertical-align:middle;
+	/*width:100px;*/
+	/*height:100px;*/
+	z-index: 2;
+}
+
 #menubar {
 	position: fixed;
 
@@ -127,6 +141,7 @@ body {
 
 #image-container {
 	position:fixed;
+	z-index:-1
 }
 
 #image-container img {

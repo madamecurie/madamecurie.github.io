@@ -70,6 +70,7 @@ $(document).ready(function(){
 					}
 				}
 				check_percents_text(percent);
+				check_percents_text_tablet(percent);
 				check_percents_image(percent);
 				calc_positions(percent);
 
@@ -84,10 +85,18 @@ $(document).ready(function(){
 
 
 		$(window).on("resize", function(e){
+			console.log("RESI");
 			var $sphere = $('#sphere2');
 			var $sphereText = $('#sphere-text');
+			var $iphoneSphere = $('#iphone-sphere');
+			var $iphoneSphereText = $('#iphone-sphere-text');
+			var $tabletSphere = $('#sphere-tablet');
+
 			center_element($sphere);
 			center_element($sphereText);
+			center_element_iphone($iphoneSphere);
+			center_element_tablet($tabletSphere);
+
 			calc_positions(percent);
 		});
 });
@@ -136,6 +145,18 @@ function check_percents_text(p) {
 
 }
 
+function check_percents_text_tablet(p) {
+	if(p > 0.4 && p < 2.5) {
+		show_sphere_text_tablet("June", "8th", 1903);
+	} else if(p > 11.86 && p < 13) {
+		show_sphere_text_tablet("December", "11th", 1903);
+	}
+	else {
+		$('#sphere-text_tablet').fadeOut(300);
+	}
+
+}
+
 function show_sphere_text(day, month, year) {
 	$('#date-day').html(day);
 	$('#date-month').html(month);
@@ -144,17 +165,29 @@ function show_sphere_text(day, month, year) {
 	$('#sphere-text').fadeIn(300);
 }
 
+function show_sphere_text_tablet(day, month, year) {
+	console.log("Shjoing");
+	$('#date-day-tablet').html(day);
+	$('#date-month-tablet').html(month);
+	$('#date-year-tablet').html(year);
+	$('#sphere-text-tablet').fadeIn(300);
+}
+
 function check_percents_image(p) {
 	if(p > 0.4 && p < 1.6) {
 		show_image(0);
 	}
 	else {
 		$("#image-container img").fadeOut(300);
+		imageIndex = -1;
 	}
 }
 
+var imageIndex = -1;
+
 function show_image(index) {
 	var image = $("#image-container").children()[index];
+	imageIndex = index;
 	$(image).fadeIn(300);
 }
 
@@ -210,6 +243,8 @@ function calc_positions(percent_down_the_line){
 
 	var $bigpic = isDesktop() ?  $('#big-pic') : $('#big-pic-tablet');
 
+	
+
 	var starting_point = p.getPointAtLength(percent*len);
 	var x_point_percent = (((starting_point.x  / box[2] ) * 100 ) - 50);
 	var y_point_percent = (((starting_point.y  / box[3] ) * 100 ));
@@ -223,5 +258,12 @@ function calc_positions(percent_down_the_line){
 	//console.log("Percent = "+(percent*100).toFixed(2)+"; w_decal="+w_decal.toFixed(1)+", hdecal = "+h_decal.toFixed(1)+", x: "+starting_point.x.toFixed(2)+", y: "+starting_point.y.toFixed(1));
 	$bigpic.css("margin-left", margins_base.marginLeft + w_decal);
 	$bigpic.css("margin-top", margins_base.marginTop + h_decal);
+
+	var $moveMe;
+	if(imageIndex != -1){
+		$moveMe = $("#image-container").children()[imageIndex];
+		// $moveMe.offset({
+		// });
+	}
 }
 
