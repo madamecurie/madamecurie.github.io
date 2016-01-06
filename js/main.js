@@ -140,7 +140,7 @@ function check_percents_text(p) {
 		show_sphere_text("April", "22th", 1906);
 	}
 	else {
-		$('#sphere-text').fadeOut(300);
+		$('#sphere-text').fadeOut(100);
 	}
 
 }

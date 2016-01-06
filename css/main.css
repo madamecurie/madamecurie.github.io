@@ -15,6 +15,11 @@ body {
 	height:6000px;
 }
 
+h3 {
+	font-size: 15px
+
+}
+
 #svgs {
 	/*position: relative;
 	width: 100%;
