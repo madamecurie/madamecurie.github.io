@@ -84,7 +84,7 @@ body {
 	vertical-align:middle;
 	/*width:100px;*/
 	/*height:100px;*/
-	z-index: 2;
+
 }
 
 #sphere-text-tablet{
@@ -98,7 +98,7 @@ body {
 	vertical-align:middle;
 	/*width:100px;*/
 	/*height:100px;*/
-	z-index: 2;
+
 }
 
 #menubar {
@@ -141,7 +141,6 @@ body {
 
 #image-container {
 	position:fixed;
-	z-index:-1
 }
 
 #image-container img {

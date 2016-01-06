@@ -70,7 +70,7 @@
 
 @media (min-width: 1025px) {
 	.desktop-hidden {
-		display: none;
+		display: none !important;
 	}
 }
 
@@ -143,7 +143,7 @@
 	.offset-eleven.column	{ margin-left: 75%; }
 
 	.tablet-hidden {
-		display: none;
+		display: none !important;
 	}
 
 }
@@ -165,7 +165,7 @@
 	}
 
 	.mobile-hidden {
-		display: none;
+		display: none !important;
 	}
 
 }
