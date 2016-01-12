@@ -80,7 +80,8 @@ $(document).ready(function(){
 				}
 				check_percents_text(percent);
 				check_percents_text_tablet(percent);
-				check_percents_image(percent);
+				if(isDesktop()) check_percents_image(percent);
+				else if (isTablet()) check_percents_image_tablet(percent);
 				calc_positions(percent);
 
 				if(isMobile()) {
@@ -225,7 +226,24 @@ function check_percents_image(p) {
 	}
 }
 
+function check_percents_image_tablet(p) {
+	if(p > 0.4 && p < 1.6) {
+		show_image_tablet(0);
+	}
+	else if(p > 2 && p < 4) {
+		show_image_tablet(1);
+	} 
+	else if(p > 6 && p < 8){
+		show_image_tablet(2);
+	}
+	else {
+		$("#img-container-fat-tablet img").fadeOut(300);
+		imageIndexTablet = -1;
+	}
+}
+
 var imageIndex = -1;
+var imageIndexTablet = -1;
 
 function show_image(index) {
 	if(imageIndex != index){
@@ -234,7 +252,15 @@ function show_image(index) {
 		imageIndex = index;
 		$(image).fadeIn(300);
 	}
-	
+}
+
+function show_image_tablet(index) {
+	if(imageIndexTablet != index){
+		console.log("Showing image "+0);
+		var image = $("#img-container-fat-tablet").children()[index];
+		imageIndexTablet = index;
+		$(image).fadeIn(300);
+	}
 }
 
 function center_element(element) {
@@ -302,21 +328,22 @@ function calc_positions(percent_down_the_line){
 	var h_decal = -h_img * (1-y_point_percent/100);
 
 	//console.log("Percent = "+(percent*100).toFixed(2)+"; w_decal="+w_decal.toFixed(1)+", hdecal = "+h_decal.toFixed(1)+", x: "+starting_point.x.toFixed(2)+", y: "+starting_point.y.toFixed(1));
-	$bigpic.css("margin-left", margins_base.marginLeft + w_decal);
-	$bigpic.css("margin-top", margins_base.marginTop + h_decal);
+	if(!isMobile()){
+		$bigpic.css("margin-left", margins_base.marginLeft + w_decal);
+		$bigpic.css("margin-top", margins_base.marginTop + h_decal);
+	}
+	
 
 	if(isDesktop()) {
 		var $bigimgcontainer = $('#img-container-fat');
 		$bigimgcontainer.css("margin-left", margins_base.marginLeft + w_decal);
 		$bigimgcontainer.css("margin-top", margins_base.marginTop + h_decal);
+	} else if (isTablet()){
+		var $bigimgcontainer = $('#img-container-fat-tablet');
+		$bigimgcontainer.css("margin-left", margins_base.marginLeft + w_decal);
+		$bigimgcontainer.css("margin-top", margins_base.marginTop + h_decal);
 	}
 
-	var $moveMe;
-	if(imageIndex != -1){
-		$moveMe = $("#image-container").children()[imageIndex];
-		// $moveMe.offset({
-		// });
-	}
 }
 
 function getPositionFromPercent(percent) {
