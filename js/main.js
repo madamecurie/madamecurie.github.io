@@ -247,7 +247,7 @@ var imageIndexTablet = -1;
 
 function show_image(index) {
 	if(imageIndex != index){
-		console.log("Showing image "+0);
+		console.log("Showing image desktop"+0);
 		var image = $("#img-container-fat").children()[index];
 		imageIndex = index;
 		$(image).fadeIn(300);
@@ -256,7 +256,7 @@ function show_image(index) {
 
 function show_image_tablet(index) {
 	if(imageIndexTablet != index){
-		console.log("Showing image "+0);
+		console.log("Showing image tablet"+0);
 		var image = $("#img-container-fat-tablet").children()[index];
 		imageIndexTablet = index;
 		$(image).fadeIn(300);
