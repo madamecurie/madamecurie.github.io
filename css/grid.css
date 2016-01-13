@@ -68,7 +68,7 @@
 .offset-ten.column		{ margin-left: 83.333333333%; }
 .offset-eleven.column	{ margin-left: 91.666666667%; }
 
-@media (min-width: 1025px) {
+@media (min-width: 1537px) {
 	.desktop-hidden {
 		display: none !important;
 	}
@@ -111,7 +111,7 @@
 
 }*/
 
-@media (min-width: 569px) and (max-width: 1024px) {
+@media (min-width: 569px) and (max-width: 1536px) {
 
 	#debug > .grid > .row > .column,
 	#debug > .grid > .row > .column > div {
