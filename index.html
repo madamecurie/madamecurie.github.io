@@ -31,14 +31,47 @@
 	<body>
 		<div class="mobile-hidden tablet-hidden" style="overflow:hidden; height:8000px; position:fixed;">
 			<div id="big-pic" style="max-width:none; width:6000px; height:6000px; overflow:hidden;">
-				<img src="imgs/path2.png" width="100%" height="100%">
+				<img src="imgs/atom.svg" width="100%" height="100%">
+			</div>
+			<div id="img-container-fat" style="position:absolute; max-width:none; width:6000px; height:6000px; overflow:hidden; top:0; left:0;">
+
+				<!--CHANGER les width des images si besoin, et bien sûr la position (left et top). 
+					dans la console : appeler getPositionFromPercent(50) permet d'avoir la position dans l'image à 50% du path. (Remplacer 50 par d'autre pourcentage).
+				dans le JS, ajouter les pourcents où on veut voir une image apparaitre:
+				check_percents_image(..)
+				ajouter un else if(..) pour les autres cas.
+				"show_image(0);" montre la première image de la liste ci dessous, show_image(1) la deuxième etc.
+			-->
+					<img src="imgs/vie_publique/img/vp-img-1.jpg" style="display:none; position: relative; left: 3000px;top: 10px;width: 500px;height: auto;">
+				
+
+					<img src="imgs/vie_publique/img/vp-img-3.jpg" style="display:none; position: relative; left: 3300px;top: 300px;width: 500px;height: auto;">
+
+					<img src="imgs/vie_publique/img/vp-img-2.jpg" style="display:none; position: relative; left: 3000px;top: 3000px;width: 500px;height: auto;">
+
+				</div>
+
+				
 			</div>
 		</div>
 
 		<div class="mobile-hidden desktop-hidden" style="overflow:hidden; height:8000px; position:fixed; top:0;">
 			<div id="big-pic-tablet" style="max-width:none; width:6000px; height:6000px; overflow:hidden; ">
-				<img src="imgs/path3.png" width="100%" height="100%">
+				<img src="imgs/atom.svg" width="100%" height="100%">
 			</div>
+
+			<!-- TABLET image container -->
+			<div id="img-container-fat-tablet" style="position:absolute; max-width:none; width:6000px; height:6000px; overflow:hidden; top:0; left:0;">
+
+					<img src="imgs/vie_publique/img/vp-img-1.jpg" style="display:none; position: relative; left: 3000px;top: 10px;width: 500px;height: auto;">
+				
+
+					<img src="imgs/vie_publique/img/vp-img-2.jpg" style="display:none; position: relative; left: 3300px;top: 300px;width: 500px;height: auto;">
+
+					<img src="imgs/vie_publique/img/vp-img-3.jpg" style="display:none; position: relative; left: 3000px;top: 3000px;width: 500px;height: auto;">
+
+				</div>
+
 		</div>
 		
 		<div class="row mobile-hidden tablet-hidden" style="overflow:hidden;">

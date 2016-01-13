@@ -24,12 +24,12 @@ window.isDesktop = function(){
 
 window.isTablet = function(){
 	var width = window.outerWidth;
-	return width <= 1024 && width > 736;
+	return width <= 1024 && width > 569;
 }
 
 window.isMobile = function(){
 	var width = window.outerWidth;
-	return width <= 736;
+	return width <= 568;
 }
 
 
@@ -54,6 +54,14 @@ $(document).ready(function(){
 		c(margins);
 		$bigpic.css("margin-left", margins.marginLeft);
 		$bigpic.css("margin-top", margins.marginTop);
+
+		var $bigcontainer;
+		if(isDesktop()){
+			$bigimgcontainer = $('#img-container-fat');
+			$bigimgcontainer.css("margin-left", margins.marginLeft);
+			$bigimgcontainer.css("margin-top", margins.marginTop);
+		}
+		
 		
 		calc_positions(percent);
 
@@ -72,7 +80,8 @@ $(document).ready(function(){
 				}
 				check_percents_text(percent);
 				check_percents_text_tablet(percent);
-				check_percents_image(percent);
+				if(isDesktop()) check_percents_image(percent);
+				else if (isTablet()) check_percents_image_tablet(percent);
 				calc_positions(percent);
 
 				if(isMobile()) {
@@ -179,12 +188,10 @@ function check_percents_text_tablet(p) {
 		show_sphere_text_tablet("February", "10th", 1921);
 	} else if(p > 48.09 && p < 49.8) {
 		show_sphere_text_tablet("February", "13th", 1921);
-
 	}
 	else {
 		$('#sphere-text_tablet').fadeOut(300);
 	}
-
 }
 
 function show_sphere_text(day, month, year) {
@@ -207,18 +214,53 @@ function check_percents_image(p) {
 	if(p > 0.4 && p < 1.6) {
 		show_image(0);
 	}
+	else if(p > 2 && p < 4) {
+		show_image(1);
+	} 
+	else if(p > 6 && p < 8){
+		show_image(2);
+	}
 	else {
-		$("#image-container img").fadeOut(300);
+		$("#img-container-fat img").fadeOut(300);
 		imageIndex = -1;
 	}
 }
 
+function check_percents_image_tablet(p) {
+	if(p > 0.4 && p < 1.6) {
+		show_image_tablet(0);
+	}
+	else if(p > 2 && p < 4) {
+		show_image_tablet(1);
+	} 
+	else if(p > 6 && p < 8){
+		show_image_tablet(2);
+	}
+	else {
+		$("#img-container-fat-tablet img").fadeOut(300);
+		imageIndexTablet = -1;
+	}
+}
+
 var imageIndex = -1;
+var imageIndexTablet = -1;
 
 function show_image(index) {
-	var image = $("#image-container").children()[index];
-	imageIndex = index;
-	$(image).fadeIn(300);
+	if(imageIndex != index){
+		console.log("Showing image desktop"+0);
+		var image = $("#img-container-fat").children()[index];
+		imageIndex = index;
+		$(image).fadeIn(300);
+	}
+}
+
+function show_image_tablet(index) {
+	if(imageIndexTablet != index){
+		console.log("Showing image tablet"+0);
+		var image = $("#img-container-fat-tablet").children()[index];
+		imageIndexTablet = index;
+		$(image).fadeIn(300);
+	}
 }
 
 function center_element(element) {
@@ -286,14 +328,42 @@ function calc_positions(percent_down_the_line){
 	var h_decal = -h_img * (1-y_point_percent/100);
 
 	//console.log("Percent = "+(percent*100).toFixed(2)+"; w_decal="+w_decal.toFixed(1)+", hdecal = "+h_decal.toFixed(1)+", x: "+starting_point.x.toFixed(2)+", y: "+starting_point.y.toFixed(1));
-	$bigpic.css("margin-left", margins_base.marginLeft + w_decal);
-	$bigpic.css("margin-top", margins_base.marginTop + h_decal);
-
-	var $moveMe;
-	if(imageIndex != -1){
-		$moveMe = $("#image-container").children()[imageIndex];
-		// $moveMe.offset({
-		// });
+	if(!isMobile()){
+		$bigpic.css("margin-left", margins_base.marginLeft + w_decal);
+		$bigpic.css("margin-top", margins_base.marginTop + h_decal);
 	}
+	
+
+	if(isDesktop()) {
+		var $bigimgcontainer = $('#img-container-fat');
+		$bigimgcontainer.css("margin-left", margins_base.marginLeft + w_decal);
+		$bigimgcontainer.css("margin-top", margins_base.marginTop + h_decal);
+	} else if (isTablet()){
+		var $bigimgcontainer = $('#img-container-fat-tablet');
+		$bigimgcontainer.css("margin-left", margins_base.marginLeft + w_decal);
+		$bigimgcontainer.css("margin-top", margins_base.marginTop + h_decal);
+	}
+
+}
+
+function getPositionFromPercent(percent) {
+	var percent = percent/100;
+	var $svg = $('#path_1');
+	var $path = $svg.find('path');
+	var p = $path[0];
+
+	var len = p.getTotalLength();
+	//get the viewbox
+	var box = $svg[0].getAttribute('viewBox');
+	box = box.split(/\s+|,/);
+
+	var starting_point = p.getPointAtLength(percent*len);
+	var x_point_percent = (((starting_point.x  / box[2] ) * 100 ));
+	var y_point_percent = (((starting_point.y  / box[3] ) * 100 ));
+	console.log("LEFT X =~ "+x_point_percent*60+"px, TOP: "+(6000-y_point_percent*60)+"px");
+}
+
+function showImages(){
+	$("img").show();
 }
 
