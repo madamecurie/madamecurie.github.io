@@ -19,12 +19,12 @@ function c(word) {
 
 window.isDesktop = function(){
 	var width = window.outerWidth;
-	return width > 1537;
+	return width > 1025;
 }
 
 window.isTablet = function(){
 	var width = window.outerWidth;
-	return width <= 1536 && width > 569;
+	return width <= 1024 && width > 569;
 }
 
 window.isMobile = function(){
