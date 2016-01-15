@@ -227,13 +227,13 @@ function check_percents_image(p) {
 }
 
 function check_percents_image_tablet(p) {
-	if(p > 0.4 && p < 1.6) {
+	if(p > 0 && p < 10) {
 		show_image_tablet(0);
 	}
-	else if(p > 2 && p < 4) {
+	else if(p > 11 && p < 12) {
 		show_image_tablet(1);
 	} 
-	else if(p > 6 && p < 8){
+	else if(p > 13 && p < 14){
 		show_image_tablet(2);
 	}
 	else {

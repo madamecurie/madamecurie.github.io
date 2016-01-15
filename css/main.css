@@ -156,6 +156,17 @@ h3 {
 #scroll-tablet-container img {
 }
 
+
+
+#img-container-fat-tablet {
+	position:absolute; 
+	max-width:none; 
+	width:6000px; 
+	height:6000px; 
+	overflow:hidden; 
+	top:0; 
+	left:0;">
+}
 /*
  * media queries
  * —
