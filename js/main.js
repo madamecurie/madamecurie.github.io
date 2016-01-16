@@ -227,15 +227,26 @@ function check_percents_image(p) {
 }
 
 function check_percents_image_tablet(p) {
-	if(p > 0 && p < 10) {
+	if(p > 2.92 && p < 6.33) {
 		show_image_tablet(0);
 	}
-	else if(p > 11 && p < 12) {
+	else if(p > 11 && p < 16) {
 		show_image_tablet(1);
 	} 
-	else if(p > 13 && p < 14){
+	else if(p > 32 && p < 40){
 		show_image_tablet(2);
 	}
+	else if(p > 38 && p < 47.5){
+		show_image_tablet(3);
+	}
+	else if(p > 47.6 && p < 52){
+		show_image_tablet(4);
+	}
+	else if(p > 56 && p < 62){
+		show_image_tablet(5);
+
+	}
+
 	else {
 		$("#img-container-fat-tablet img").fadeOut(300);
 		imageIndexTablet = -1;
