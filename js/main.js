@@ -75,6 +75,8 @@ $(document).ready(function(){
 		
 		calc_positions(percent);
 
+		var onceDirty = true;
+
 		$(window).load(function(){
 
 			$(window).scroll(function(e) {
@@ -96,6 +98,11 @@ $(document).ready(function(){
 
 				if(isMobile()) {
 					iphone_do_stuff();
+				}
+
+				if(isMobile() || isTablet() && percent > 100.20) {
+						if(onceDirty) launchAnimation();
+						onceDirty = false;
 				}
 				
 			});
@@ -414,4 +421,16 @@ function getPositionFromPercent(percent) {
 function showImages(){
 	$("img").show();
 }
+
+function launchAnimation() {
+
+	var interval = setInterval(function(){ calc_positions(p)}, 100);
+
+}
+
+
+
+
+
+
 
