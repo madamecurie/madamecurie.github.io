@@ -218,17 +218,22 @@ function show_sphere_text_tablet(day, month, year) {
 function check_percents_image(p) {
 	var showingSomething = false;
 
-	if(p >= 0 && p < 9) {
+	if(p >= 0 && p <= 9) {
 		showingSomething = true;
 		show_image(0)
 		show_image(1)
 		show_image(2);
+		console.log("Showing images 0,1,2");
 	}
-	if(p > 9.1 && p < 16) {
+	if(p > 6.1 && p < 9) {
 		showingSomething = true;
 		show_image(3);
+		console.log("Showing images 3");
 	} 
+
+
 	if(!showingSomething) {
+		console.log("Hidding images");
 		$("#img-container-fat img").fadeOut(100);
 		imageIndex = -1;
 	}
@@ -246,7 +251,7 @@ function check_percents_image_tablet(p) {
 		showingSomething = true;
 		show_image_tablet(1);
 	} 
-	if(p > 32 && p < 49){
+	if(p > 32 && p < 41){
 		showingSomething = true;
 		show_image_tablet(2);
 	}
