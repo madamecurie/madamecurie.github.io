@@ -19,7 +19,7 @@ function c(word) {
 
 window.isDesktop = function(){
 	var width = window.outerWidth;
-	return width > 1025;
+	return width > 1024;
 }
 
 window.isTablet = function(){
@@ -29,7 +29,7 @@ window.isTablet = function(){
 
 window.isMobile = function(){
 	var width = window.outerWidth;
-	return width <= 568;
+	return width <= 569;
 }
 
 
@@ -211,46 +211,62 @@ function show_sphere_text_tablet(day, month, year) {
 }
 
 function check_percents_image(p) {
+	var showingSomething = false;
+
 	if(p > 0 && p < 9) {
+		showingSomething = true;
 		show_image(0)
 		show_image(1)
 		show_image(2);
 	}
-	else if(p > 9.1 && p < 16) {
+	if(p > 9.1 && p < 16) {
+		showingSomething = true;
 		show_image(3);
 	} 
-	else {
+	if(!showingSomething) {
 		$("#img-container-fat img").fadeOut(100);
 		imageIndex = -1;
 	}
 }
 
 function check_percents_image_tablet(p) {
+	var showingSomething = false;
+
 	if(p > 2.92 && p < 6.33) {
+		showingSomething = true;
 		show_image_tablet(0);
 	}
-	else if(p > 11 && p < 16) {
+
+	if(p > 11 && p < 16) {
+		showingSomething = true;
 		show_image_tablet(1);
 	} 
-	else if(p > 32 && p < 49){
+	if(p > 32 && p < 49){
+		showingSomething = true;
 		show_image_tablet(2);
 	}
-	else if(p > 38 && p < 47.5){
+	if(p > 38 && p < 47.5){
+		showingSomething = true;
 		show_image_tablet(3);
 	}
-	else if(p > 47.6 && p < 52){
+	if(p > 47.6 && p < 52){
+		showingSomething = true;
 		show_image_tablet(4);
 	}
-	else if(p > 56 && p < 69){
+	if(p > 56 && p < 69){
+		showingSomething = true;
 		show_image_tablet(5);
 	}
-	else if(p > 63.3 && p < 80){
+	if(p > 63.3 && p < 80){
+		showingSomething = true;
 		show_image_tablet(6);
 	}
-	else if(p > 63.2 && p < 67){
+	if(p > 63.2 && p < 67){
+		showingSomething = true;
 		show_image_tablet(7);
 	}
-	else {
+
+	if(!showingSomething) {
 		$("#img-container-fat-tablet img").fadeOut(300);
 		imageIndexTablet = -1;
 	}
