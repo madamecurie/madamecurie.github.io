@@ -61,6 +61,11 @@ $(document).ready(function(){
 			$bigimgcontainer.css("margin-left", margins.marginLeft);
 			$bigimgcontainer.css("margin-top", margins.marginTop);
 		}
+
+		check_percents_text(0);
+		check_percents_text_tablet(0);
+		if(isDesktop()) check_percents_image(0);
+		else if (isTablet()) check_percents_image_tablet(0);
 		
 		
 		calc_positions(percent);
@@ -213,7 +218,7 @@ function show_sphere_text_tablet(day, month, year) {
 function check_percents_image(p) {
 	var showingSomething = false;
 
-	if(p > 0 && p < 9) {
+	if(p >= 0 && p < 9) {
 		showingSomething = true;
 		show_image(0)
 		show_image(1)
