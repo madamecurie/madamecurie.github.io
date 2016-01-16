@@ -233,7 +233,7 @@ function check_percents_image_tablet(p) {
 	else if(p > 11 && p < 16) {
 		show_image_tablet(1);
 	} 
-	else if(p > 32 && p < 40){
+	else if(p > 32 && p < 49){
 		show_image_tablet(2);
 	}
 	else if(p > 38 && p < 47.5){
@@ -242,9 +242,11 @@ function check_percents_image_tablet(p) {
 	else if(p > 47.6 && p < 52){
 		show_image_tablet(4);
 	}
-	else if(p > 56 && p < 62){
+	else if(p > 56 && p < 69){
 		show_image_tablet(5);
-
+	}
+	else if(p > 63.3 && p < 80){
+		show_image_tablet(6);
 	}
 
 	else {
