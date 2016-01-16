@@ -18,22 +18,22 @@ function c(word) {
 }
 
 window.isDesktop = function(){
-	var width = window.outerWidth;
+	var width = $(window).width();
 	return width > 1024;
 }
 
 window.isTablet = function(){
-	var width = window.outerWidth;
+	var width = $(window).width();
 	return width <= 1024 && width > 569;
 }
 
 window.isMobile = function(){
-	var width = window.outerWidth;
+	var width = $(window).width();
 	return width <= 569;
 }
 
 window.isTabletPortrait = function(){
-	var width = window.outerWidth;
+	var width = $(window).width();
 	return width <= 800 && width >= 768;
 }
 
@@ -123,7 +123,6 @@ $(document).ready(function(){
 
 var lastImgIndex = -1;
 function iphone_do_stuff() {
-	
 	var docTop = $(document.body).scrollTop();
 
 	var images = $('#iphone-container img');
