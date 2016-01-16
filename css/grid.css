@@ -169,3 +169,15 @@
 	}
 
 }
+
+@media (orientation: landscape) and (min-width: 569px) and (max-width: 1024px){
+	.hidden-landscape{
+		display:none !important
+	}
+}
+
+@media (orientation: portrait) and (min-width: 569px) and (max-width: 1024px){
+	.hidden-portrait{
+		display:none !important;
+	}
+}

@@ -32,6 +32,11 @@ window.isMobile = function(){
 	return width <= 569;
 }
 
+window.isTabletPortrait = function(){
+	var width = window.outerWidth;
+	return width <= 800 && width >= 768;
+}
+
 
 $(document).ready(function(){
 
@@ -161,7 +166,7 @@ function check_percents_text(p) {
 }
 
 function check_percents_text_tablet(p) {
-	if(p > 0 && p < 4.55) {
+	if(p >= 0 && p < 4.55) {
 		show_sphere_text_tablet("April", "20th", 1906);
 	} else if(p > 4.56 && p < 5.53) {
 		show_sphere_text_tablet("April", "22nd", 1906);
@@ -208,7 +213,6 @@ function show_sphere_text(day, month, year) {
 }
 
 function show_sphere_text_tablet(day, month, year) {
-	console.log("Shjoing");
 	$('#date-day-tablet').html(day);
 	$('#date-month-tablet').html(month);
 	$('#date-year-tablet').html(year);
@@ -277,7 +281,9 @@ function check_percents_image_tablet(p) {
 	}
 
 	if(!showingSomething) {
-		$("#img-container-fat-tablet img").fadeOut(300);
+		var string = isTabletPortrait() ? "portait" : "landscape";
+
+		$("#img-container-fat-tablet-"+string+" img").fadeOut(300);
 		imageIndexTablet = -1;
 	}
 }
@@ -297,7 +303,10 @@ function show_image(index) {
 function show_image_tablet(index) {
 	if(imageIndexTablet != index){
 		console.log("Showing image tablet"+0);
-		var image = $("#img-container-fat-tablet").children()[index];
+		var string = isTabletPortrait() ? "portait" : "landscape";
+		var imageCtn = isTabletPortrait() ? $("#img-container-fat-tablet-portrait") : $("#img-container-fat-tablet-landscape"); 
+		var image = imageCtn.children()[index];
+		c(image);
 		imageIndexTablet = index;
 		$(image).fadeIn(300);
 	}
@@ -379,7 +388,7 @@ function calc_positions(percent_down_the_line){
 		$bigimgcontainer.css("margin-left", margins_base.marginLeft + w_decal);
 		$bigimgcontainer.css("margin-top", margins_base.marginTop + h_decal);
 	} else if (isTablet()){
-		var $bigimgcontainer = $('#img-container-fat-tablet');
+		var $bigimgcontainer = isTabletPortrait() ? $('#img-container-fat-tablet-portrait') : $('#img-container-fat-tablet-landscape');
 		$bigimgcontainer.css("margin-left", margins_base.marginLeft + w_decal);
 		$bigimgcontainer.css("margin-top", margins_base.marginTop + h_decal);
 	}
