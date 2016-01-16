@@ -211,17 +211,16 @@ function show_sphere_text_tablet(day, month, year) {
 }
 
 function check_percents_image(p) {
-	if(p > 0.4 && p < 1.6) {
-		show_image(0);
-	}
-	else if(p > 2 && p < 4) {
-		show_image(1);
-	} 
-	else if(p > 6 && p < 8){
+	if(p > 0 && p < 9) {
+		show_image(0)
+		show_image(1)
 		show_image(2);
 	}
+	else if(p > 9.1 && p < 16) {
+		show_image(3);
+	} 
 	else {
-		$("#img-container-fat img").fadeOut(300);
+		$("#img-container-fat img").fadeOut(100);
 		imageIndex = -1;
 	}
 }
@@ -248,7 +247,9 @@ function check_percents_image_tablet(p) {
 	else if(p > 63.3 && p < 80){
 		show_image_tablet(6);
 	}
-
+	else if(p > 63.2 && p < 67){
+		show_image_tablet(7);
+	}
 	else {
 		$("#img-container-fat-tablet img").fadeOut(300);
 		imageIndexTablet = -1;
