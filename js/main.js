@@ -163,7 +163,7 @@ function check_percents_text(p) {
 function check_percents_text_tablet(p) {
 	if(p > 0 && p < 4.55) {
 		show_sphere_text_tablet("April", "20th", 1906);
-	} else if(p > 4,56 && p < 5.53) {
+	} else if(p > 4.56 && p < 5.53) {
 		show_sphere_text_tablet("April", "22nd", 1906);
 	} else if(p > 5.54 && p < 11.88) {
 		show_sphere_text_tablet("November", "24th", 1911);
