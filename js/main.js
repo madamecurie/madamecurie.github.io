@@ -72,7 +72,7 @@ $(document).ready(function(){
 			$(window).scroll(function(e) {
 				//console.log("Doc Height = "+$(document).height()+", scroll="+$(document).scrollTop());
 				percent = $(document.body).scrollTop() * 100 / ($(document.body)[0].scrollHeight - window.innerHeight);
-				if(percent > 100) console.log("percent equals "+percent);
+				//console.log("percent equals "+percent);
 
 				if(isDesktop()) {
 					if(percent > 99.7) {
@@ -90,7 +90,8 @@ $(document).ready(function(){
 					iphone_do_stuff();
 				}
 
-				if(isMobile() || isTablet() && percent > 100.20) {
+				if((isMobile() || isTablet()) && percent > 100.20) {
+						console.log("Percent = "+percent+" and Once dirty = "+onceDirty);
 						if(onceDirty) launchAnimation();
 						onceDirty = false;
 				}
