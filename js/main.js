@@ -315,9 +315,30 @@ function check_percents_image(p) {
 		showingSomething = true;
 		show_image(17);
 	} 
-		if(p > 53.30 && p < 62) {
+		if(p > 53.30 && p < 63.4) {
 		showingSomething = true;
 		show_image(18);
+		show_image(19)
+		show_image(20)
+	} 
+		if(p > 63.6 && p < 71.9) {
+		showingSomething = true;
+		show_image(21);
+		show_image(22)
+	} 
+		if(p > 70 && p < 76.9) {
+		showingSomething = true;
+		show_image(25)
+
+	} 
+		if(p > 73 && p < 77.9) {
+		showingSomething = true;
+		show_image(23);
+	} 
+		if(p > 73 && p < 79.24) {
+		showingSomething = true;
+		show_image(24)
+
 	} 
 
 
