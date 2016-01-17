@@ -74,7 +74,7 @@ $(document).ready(function(){
 			$(window).scroll(function(e) {
 				//console.log("Doc Height = "+$(document).height()+", scroll="+$(document).scrollTop());
 				percent = $(document.body).scrollTop() * 100 / ($(document.body)[0].scrollHeight - window.innerHeight);
-				//console.log("percent equals "+percent);
+				console.log("percent equals "+percent);
 
 				if(isDesktop()) {
 					if(percent > 99.7) {
@@ -165,39 +165,81 @@ function check_percents_text(p) {
 }
 
 function check_percents_text_tablet(p) {
-	if(p >= 0 && p < 4.55) {
-		show_sphere_text_tablet("April", "20th", 1906);
-	} else if(p > 4.56 && p < 5.53) {
-		show_sphere_text_tablet("April", "22nd", 1906);
-	} else if(p > 5.54 && p < 11.88) {
+	if(p >= 0 && p < 4.71) {
+		show_sphere_text_tablet("April", "19th", 1906);
+	} else if(p > 4.72 && p < 5.72) {
+		show_sphere_text_tablet("April", "21st", 1906);
+	} else if(p > 5.73 && p < 12.32) {
+		show_sphere_text_tablet("November", "23th", 1911);
+	} else if(p > 12.33 && p < 13.32) {
 		show_sphere_text_tablet("November", "24th", 1911);
-	} else if(p > 11.89 && p < 12.86) {
-		show_sphere_text_tablet("November", "25th", 1911);
-	} else if(p > 12.87 && p < 35.25) {
+	} else if(p > 13.33 && p < 36.48) {
 		show_sphere_text_tablet("November", "28th", 1911);
-	} else if(p > 35.26 && p < 37.02) {
+	} else if(p > 36.49 && p < 39.16) {
 		show_sphere_text_tablet("January", "3rd", 1912);
-	} else if(p > 37.03 && p < 37.80) {
+	} else if(p > 39.17 && p < 39.57) {
 		show_sphere_text_tablet("January", "4th", 1912);
-	} else if(p > 37.81 && p < 38.32) {
+	} else if(p > 39.68 && p < 40.56) {
 		show_sphere_text_tablet("January", "5th", 1912);
-	} else if(p > 38.33 && p < 39.18) {
-		show_sphere_text_tablet("January", "6th", 1912);
-	} else if(p > 39.19 && p < 39.68) {
-		show_sphere_text_tablet("January", "26th", 1912);
-	} else if(p > 39.67 && p < 40.21) {
-		show_sphere_text_tablet("July", "23rd", 1912);
-	} else if(p > 40.22 && p < 45.27) {
-		show_sphere_text_tablet("February", "7th", 1921);
-	} else if(p > 45.28 && p < 46.39) {
+	} else if(p > 40.57 && p < 41.11) {
+		show_sphere_text_tablet("January", "25th", 1912);
+	} else if(p > 41.12 && p < 41.62) {
+		show_sphere_text_tablet("July", "22nd", 1912);
+	} else if(p > 41.63 && p < 46.8) {
+		show_sphere_text_tablet("February", "2nd", 1921);
+	} else if(p > 46.9 && p < 48.04) {
 		show_sphere_text_tablet("February", "28th", 1921);
-	} else if(p > 46.40 && p < 47.27) {
+	} else if(p > 48.05 && p < 48.96) {
 		show_sphere_text_tablet("March", "3rd", 1921);
-	} else if(p > 47.28 && p < 48.08) {
-		show_sphere_text_tablet("February", "10th", 1921);
-	} else if(p > 48.09 && p < 49.8) {
-		show_sphere_text_tablet("February", "13th", 1921);
-	}
+	} else if(p > 48.97 && p < 49.79) {
+		show_sphere_text_tablet("March", "10th", 1921);
+	} else if(p > 49.8 && p < 51.59) {
+		show_sphere_text_tablet("March", "12th", 1921);
+	} else if(p > 51.6 && p < 53.98) {
+		show_sphere_text_tablet("March", "13th", 1921);
+	} else if(p > 53.99 && p < 55.42) {
+		show_sphere_text_tablet("March", "20th", 1921);				
+	} else if(p > 55.43 && p < 56.42) {
+		show_sphere_text_tablet("March", "31th", 1921);
+	} else if(p > 56.43 && p < 57.55) {
+		show_sphere_text_tablet("Avril", "13th", 1921);
+	} else if(p > 57.56 && p < 58.55) {
+		show_sphere_text_tablet("Avril", "20th", 1921);			
+	} else if(p > 58.56 && p < 60.09) {
+		show_sphere_text_tablet("Avril", "26th", 1921);
+	} else if(p > 60.10 && p < 60.92) {
+		show_sphere_text_tablet("May", "3th", 1921);
+	} else if(p > 60.93 && p < 63.57) {
+		show_sphere_text_tablet("May", "4th", 1921);
+	} else if(p > 63.58 && p < 64.81) {
+		show_sphere_text_tablet("May", "11th", 1921);
+	} else if(p > 64.82 && p < 70.82) {
+		show_sphere_text_tablet("May", "21th", 1921);
+	} else if(p > 70.83 && p < 75.02) {
+		show_sphere_text_tablet("June", "6th", 1921);
+	} else if(p > 75.03 && p < 75.67) {
+		show_sphere_text_tablet("July", "2nd", 1921);
+	} else if(p > 75.68 && p < 76.46) {
+		show_sphere_text_tablet("April", "2nd", 1932);
+	} else if(p > 76.47 && p < 76.89) {
+		show_sphere_text_tablet("June", "4th", 1934);
+	} else if(p > 76.9 && p < 94.96) {
+		show_sphere_text_tablet("July", "4th", 1934);
+	} else if(p > 94.97 && p < 97.28) {
+		show_sphere_text_tablet("July", "5th", 1934);
+	} else if(p > 97.29 && p < 98.13) {
+		show_sphere_text_tablet("July", "8th", 1934);
+	} else if(p > 98.14 && p < 99.55) {
+		show_sphere_text_tablet("November", "11th", 1934);
+	} else if(p > 99.56 && p < 100) {
+		show_sphere_text_tablet("February", "28th", 1935);
+
+
+
+
+
+	} 
+
 	else {
 		$('#sphere-text_tablet').fadeOut(300);
 	}
@@ -250,7 +292,7 @@ function check_percents_image_tablet(p) {
 		show_image_tablet(0);
 	}
 
-	if(p > 11 && p < 16) {
+	if(p > 10.7 && p < 16) {
 		showingSomething = true;
 		show_image_tablet(1);
 	} 
@@ -258,11 +300,11 @@ function check_percents_image_tablet(p) {
 		showingSomething = true;
 		show_image_tablet(2);
 	}
-	if(p > 38 && p < 47.5){
+	if(p > 45 && p < 48.61){
 		showingSomething = true;
 		show_image_tablet(3);
 	}
-	if(p > 47.6 && p < 52){
+	if(p > 48.63 && p < 52){
 		showingSomething = true;
 		show_image_tablet(4);
 	}
@@ -270,13 +312,29 @@ function check_percents_image_tablet(p) {
 		showingSomething = true;
 		show_image_tablet(5);
 	}
-	if(p > 63.3 && p < 80){
+	if(p > 59.5 && p < 66.6){
 		showingSomething = true;
 		show_image_tablet(6);
 	}
-	if(p > 63.2 && p < 67){
+	if(p > 63.38 && p < 67){
 		showingSomething = true;
 		show_image_tablet(7);
+	}
+	if(p > 67.5 && p < 71.85){
+		showingSomething = true;
+		show_image_tablet(11);
+	}
+	if(p > 71.86 && p < 76.1449){
+		showingSomething = true;
+		show_image_tablet(8);
+	}
+	if(p > 76.145 && p < 85){
+		showingSomething = true;
+		show_image_tablet(9);
+	}
+	if(p > 86 && p <99.99){
+		showingSomething = true;
+		show_image_tablet(10);
 	}
 
 	if(!showingSomething) {
