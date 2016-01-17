@@ -296,7 +296,7 @@ function check_percents_image_tablet(p) {
 		showingSomething = true;
 		show_image_tablet(1);
 	} 
-	if(p > 32 && p < 41){
+	if(p > 32 && p < 42){
 		showingSomething = true;
 		show_image_tablet(2);
 	}
