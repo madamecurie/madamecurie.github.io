@@ -482,7 +482,7 @@ function launchAnimation(p) {
 	document.body.scrollTop -= ppp;
 	if(document.body.scrollTop > 0){
 		anims.push(setTimeout(function(){
-			ppp+=10; //pixel ajoutés, yen a 60'000
+			ppp+=3000; //pixel ajoutés, yen a 60'000
 			launchAnimation(ppp);
 		}, 60)); //tous les X millisec
 	} else {
