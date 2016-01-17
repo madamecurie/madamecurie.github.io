@@ -61,7 +61,9 @@ $(document).ready(function(){
 		check_percents_text_tablet(0);
 		if(isDesktop()) check_percents_image(0);
 		else if (isTablet()) check_percents_image_tablet(0);
-		
+		if(isMobile()) {
+			iphone_do_stuff();
+		}
 		
 		calc_positions(percent);
 
