@@ -270,16 +270,61 @@ function check_percents_image(p) {
 		show_image(2);
 		console.log("Showing images 0,1,2");
 	}
-	if(p > 6.1 && p < 9) {
+	if(p > 5.1 && p < 9.71) {
 		showingSomething = true;
 		show_image(3);
-		console.log("Showing images 3");
 	} 
+	if(p > 5.1 && p < 9.71) {
+		showingSomething = true;
+		show_image(4);
+	}
+	if(p > 9.72 && p < 19.87) {
+		showingSomething = true;
+		show_image(5);
+		show_image(6);
+		show_image(7);
+	} 
+		if(p > 20 && p < 35) {
+		showingSomething = true;
+		show_image(8);
+		show_image(9);
+	} 
+		if(p > 27.5 && p < 36) {
+		showingSomething = true;
+		show_image(10);
+	} 
+		if(p > 33 && p < 39.7) {
+		showingSomething = true;
+		show_image(11);
+	}
+		if(p > 34 && p < 40) {
+		showingSomething = true;
+		show_image(12);
+	} 
+		if(p > 33.8 && p < 41.7) {
+		showingSomething = true;
+		show_image(13);
+	} 
+		if(p > 42 && p < 52.26) {
+		showingSomething = true;
+		show_image(14);
+		show_image(15);
+		show_image(16);
+	} 
+		if(p > 50 && p < 53.29) {
+		showingSomething = true;
+		show_image(17);
+	} 
+		if(p > 53.30 && p < 62) {
+		showingSomething = true;
+		show_image(18);
+	} 
+
 
 
 	if(!showingSomething) {
 		console.log("Hidding images");
-		$("#img-container-fat img").fadeOut(100);
+		$("#img-container-fat img").fadeOut(50);
 		imageIndex = -1;
 	}
 }
