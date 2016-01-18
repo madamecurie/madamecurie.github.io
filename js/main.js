@@ -147,16 +147,46 @@ function iphone_do_stuff() {
 }
 
 function check_percents_text(p) {
-	if(p > 6.4 && p < 7.5) {
+	if(p > 6.88 && p < 8.29) {
 		show_sphere_text("June", "8th", 1903);
-	} else if(p > 11.86 && p < 13) {
+	} else if(p > 11.51 && p < 12.53) {
 		show_sphere_text("December", "11th", 1903);
-	} else if(p > 16 && p < 17) {
-		show_sphere_text("July", "4th", 1905);
-	} else if(p > 25.9 && p < 27.5) {
+	} else if(p > 17.05 && p < 18.24) {
+		show_sphere_text("July", "3rd", 1905);
+	} else if(p > 26.71 && p < 28.65) {
 		show_sphere_text("April", "20th", 1906);
-	} else if(p > 27.6 && p < 28.1) {
-		show_sphere_text("April", "22th", 1906);
+	} else if(p > 29.8 && p < 31.6) {
+		show_sphere_text("April", "22nd", 1906);
+	} else if(p > 35.05 && p < 37.38) {
+		show_sphere_text("November", "25th", 1911);
+	} else if(p > 38.34 && p < 39.34) {
+		show_sphere_text("November", "28th", 1911);
+	} else if(p > 43.96 && p < 45.97) {
+		show_sphere_text("December", "11th", 1911);
+	} else if(p > 51.39 && p < 52.52) {
+		show_sphere_text("September", "15th", 1913);
+	} else if(p > 54.9 && p < 57.11) {
+		show_sphere_text("February", "27th", 1921);
+	} else if(p > 58.47 && p < 60.34) {
+		show_sphere_text("February", "29th", 1921);
+	} else if(p > 65.33 && p < 67.17) {
+		show_sphere_text("March", "7th", 1921);
+	} else if(p > 76.08 && p < 77.94) {
+		show_sphere_text("March", "25th", 1921);
+	} else if(p > 80.68 && p < 82.279) {
+		show_sphere_text("March", "29th", 1921);
+	} else if(p > 82.28 && p < 83.829) {
+		show_sphere_text("April", "1st", 1921);	
+	} else if(p > 83.83 && p < 85.3) {
+		show_sphere_text("April", "24th", 1921);
+	} else if(p > 86.79 && p < 88.78) {
+		show_sphere_text("May", "21st", 1921);
+	} else if(p > 92.51 && p < 93.21) {
+		show_sphere_text("June", "5th", 1934);
+	} else if(p > 93.61 && p < 94.40) {
+		show_sphere_text("June", "7th", 1934);
+	} else if(p > 96.05 && p < 97.06) {
+		show_sphere_text("July", "05th", 1934);
 	}
 	else {
 		$('#sphere-text').fadeOut(100);
@@ -338,7 +368,25 @@ function check_percents_image(p) {
 		if(p > 73 && p < 79.24) {
 		showingSomething = true;
 		show_image(24)
-
+	} 
+		if(p > 79.34 && p < 90.8) {
+		showingSomething = true;
+		show_image(26)
+		show_image(27)
+		show_image(28)
+		show_image(29)
+		show_image(30)
+	} 
+		if(p > 90.9 && p < 97.7) {
+		showingSomething = true;
+		show_image(31)
+		show_image(32)
+		show_image(33)
+		show_image(35)
+	} 
+		if(p > 97.8 && p < 99.99) {
+		showingSomething = true;
+		show_image(34)
 	} 
 
 
